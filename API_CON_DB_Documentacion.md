@@ -387,3 +387,7 @@ Application started. Press Ctrl+C to shut down.
 - [ ] Agregar manejo de errores centralizado (middleware de excepciones).
 - [ ] Documentar la API con Swagger UI visible en desarrollo.
 - [ ] Evaluar habilitar SSL real en la conexión a MySQL para entornos de producción, en lugar de `SslMode=none`.
+
+## 12. Autor
+
+Pablo Santamaria

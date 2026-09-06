@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+*.user
+
+# Build output
+**/bin/
+**/obj/
+
+# Local secrets
+**/appsettings.secrets.json

@@ -110,7 +110,7 @@ Para el detalle técnico completo (modelos, migraciones, decisiones de arquitect
 
 ## 👤 Autor
 
-**Pablo Rodríguez**
+**Pablo Santamaria**
 Proyecto académico — TEC-UPB, Diseño Web
 
 ---

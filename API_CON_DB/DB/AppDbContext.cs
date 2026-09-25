@@ -9,6 +9,6 @@ namespace API_CON_DB.DB
         {
         }
 
-        public DbSet<Producto> Productos { get; set; }
+        public DbSet<Cafe> Cafes => Set<Cafe>();
     }
 }

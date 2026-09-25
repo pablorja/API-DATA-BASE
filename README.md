@@ -1,118 +1,19 @@
-# 🛒 API_CON_DB
+﻿# API_CON_DB
 
-**API REST en ASP.NET Core (.NET 10) conectada a MySQL**, con operaciones CRUD completas sobre un catálogo de productos.
+API REST para administrar el catálogo de café, desarrollada con ASP.NET Core 10, Entity Framework Core y MySQL.
 
-![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![EF Core](https://img.shields.io/badge/Entity%20Framework-Core-68217A?style=for-the-badge&logo=nuget&logoColor=white)
-![License](https://img.shields.io/badge/status-en%20desarrollo-yellow?style=for-the-badge)
+La guía de configuración, el esquema esperado y los ejemplos para Postman están en [API_CON_DB_Documentacion.md](./API_CON_DB_Documentacion.md).
 
----
+## Inicio rápido
 
-## 📋 Descripción
+1. Inicia MySQL y confirma que existe la base `tienda_cafe` con la tabla `cafe`.
+2. Configura `ConnectionStrings__DefaultConnection` en las variables de entorno de Windows o en el archivo local ignorado `API_CON_DB/appsettings.secrets.json`.
+3. Abre `API_CON_DB.slnx` en Visual Studio, establece el proyecto `API_CON_DB` como proyecto de inicio y ejecuta el perfil `http` con F5. Desde PowerShell también puedes ejecutar:
 
-Este proyecto implementa una API REST que gestiona un inventario de productos, utilizando **Entity Framework Core** como ORM y **MySQL** como motor de base de datos. Fue desarrollado como parte del curso de Diseño Web (TEC-UPB).
+   ```powershell
+   dotnet run --project .\API_CON_DB\API_CON_DB.csproj
+   ```
 
-## ✨ Características
+4. Prueba `http://localhost:5031/api/cafe` desde Postman.
 
-- ✅ CRUD completo de productos (`GET`, `POST`, `PUT`, `DELETE`)
-- ✅ Conexión a MySQL mediante Entity Framework Core
-- ✅ Migraciones versionadas de base de datos
-- ✅ Documentación de endpoints y arquitectura incluida
-- ✅ Probado end-to-end con Postman
-
-## 🛠️ Tecnologías
-
-| Tecnología | Uso |
-|---|---|
-| **ASP.NET Core (.NET 10)** | Framework de la API |
-| **Entity Framework Core** | ORM |
-| **MySql.EntityFrameworkCore** | Proveedor de conexión a MySQL |
-| **MySQL** | Base de datos relacional |
-| **Postman** | Pruebas de endpoints |
-
-## 📂 Estructura del proyecto
-
-```
-API_CON_DB/
-├── Controllers/
-│   └── ProductosController.cs
-├── DB/
-│   ├── AppDbContext.cs
-│   └── DesignTimeDbContextFactory.cs
-├── Migrations/
-├── Models/
-│   └── Productos.cs
-├── appsettings.json
-└── Program.cs
-```
-
-## 🚀 Cómo ejecutar el proyecto
-
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/pablorja/API-DATA-BASE.git
-cd API-DATA-BASE/API_CON_DB
-
-# 2. Restaurar dependencias
-dotnet restore
-
-# 3. Configurar la cadena de conexión en appsettings.json
-#    (ver sección de configuración más abajo)
-
-# 4. Aplicar migraciones
-dotnet ef database update
-
-# 5. Ejecutar la API
-dotnet run
-```
-
-La API quedará disponible en `http://localhost:5031`.
-
-## ⚙️ Configuración de la base de datos
-
-En `appsettings.json`, ajusta la cadena de conexión con tus propios datos:
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=Tienda;User=root;Password=TU_PASSWORD;SslMode=none;AllowPublicKeyRetrieval=True;"
-  }
-}
-```
-
-> ⚠️ No subas contraseñas reales a un repositorio público. Usa `dotnet user-secrets` o variables de entorno en proyectos reales.
-
-## 📡 Endpoints disponibles
-
-| Método | Ruta | Descripción |
-|---|---|---|
-| `GET` | `/api/productos` | Lista todos los productos |
-| `GET` | `/api/productos/{id}` | Obtiene un producto por id |
-| `POST` | `/api/productos` | Crea un nuevo producto |
-| `PUT` | `/api/productos/{id}` | Actualiza un producto existente |
-| `DELETE` | `/api/productos/{id}` | Elimina un producto |
-
-**Ejemplo de body (POST/PUT):**
-```json
-{
-  "nombre": "Producto de prueba",
-  "cantidad": 10,
-  "valor": 25.50
-}
-```
-
-## 📖 Documentación completa
-
-Para el detalle técnico completo (modelos, migraciones, decisiones de arquitectura y solución de errores comunes), consulta:
-
-📄 [**API_CON_DB_Documentacion.md**](./API_CON_DB_Documentacion.md)
-
-## 👤 Autor
-
-**Pablo Santamaria**
-Proyecto académico — TEC-UPB, Diseño Web
-
----
-
-<p align="center">Hecho con ☕ y muchas migraciones de Entity Framework</p>
+No ejecutes las migraciones antiguas de `Productos` contra la base `tienda_cafe`; la tabla `cafe` ya fue creada con el esquema nuevo.

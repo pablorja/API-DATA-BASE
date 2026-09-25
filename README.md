@@ -2,7 +2,7 @@
 
 API REST para administrar el catálogo de café, desarrollada con ASP.NET Core 10, Entity Framework Core y MySQL.
 
-La guía de configuración, el esquema esperado y los ejemplos para Postman están en [API_CON_DB_Documentacion.md](./API_CON_DB_Documentacion.md).
+La guía detallada de arquitectura, configuración, ejecución y uso está en [DOCUMENTACION_PROYECTO.md](./DOCUMENTACION_PROYECTO.md). La referencia de endpoints y ejemplos para Postman está en [API_CON_DB_Documentacion.md](./API_CON_DB_Documentacion.md).
 
 ## Inicio rápido
 
